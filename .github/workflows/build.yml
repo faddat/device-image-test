@@ -6,6 +6,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: faddat/imager@master
+    - uses: faddat/imager@v1
+    - name: Shrink gaia.img
+      run: sudo pishrink.sh -a -Z -v ubuntu-20.04.img
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: Your Pi Image
+        path: ubuntu-20.04.img.xz
 
 
