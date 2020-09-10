@@ -1,0 +1,7 @@
+name: imager
+on: [push, pull_request]
+
+jobs:
+  build:
+    steps:
+      - uses: faddat/imager
